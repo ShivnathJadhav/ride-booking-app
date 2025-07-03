@@ -19,20 +19,20 @@ public class RideRequest {
     private  Long id;
 
     @Column(columnDefinition = "Geometry(Point, 4326)")
-    private Point pickUpLocation;
+    private Point pickUpLocation; // Column to store the pickup location as a Point geometry type with SRID 4326 (WGS 84)
 
     @Column(columnDefinition = "Geometry(Point, 4326)")
-    private Point dropLocation;
+    private Point dropLocation; // Column to store the drop-off location as a Point geometry type with SRID 4326 (WGS 84)
 
     @CreationTimestamp // it will fill the requestTimme automatically
-    private LocalDateTime requestTime;
+    private LocalDateTime requestTime;  // Timestamp when the ride request was created, automatically filled by Hibernate
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Rider rider;
+    private Rider rider; // Many-to-one relationship with Rider entity, each ride request is made by a rider
 
     @Enumerated(EnumType.STRING)
-    private PaymentMethod paymentMethod;
+    private PaymentMethod paymentMethod; // CASH, CARD, UPI
 
     @Enumerated(EnumType.STRING)
-    private RideRequestStatus rideRequestStatus;
+    private RideRequestStatus rideRequestStatus; // PENDING, CANCELLED, CONFIRMED
 }

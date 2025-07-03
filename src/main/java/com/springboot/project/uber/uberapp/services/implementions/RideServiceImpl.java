@@ -31,6 +31,7 @@ public class RideServiceImpl implements RideService {
         return null;
     }
 
+
     @Override
     public Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest) {
         return null;

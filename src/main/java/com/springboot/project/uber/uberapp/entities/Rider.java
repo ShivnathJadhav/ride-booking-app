@@ -14,7 +14,7 @@ public class Rider {
 
     @OneToOne
     @JoinColumn(name ="user_id", unique = true)
-    private User user;
+    private User user; // One-to-one relationship with User entity, each rider is a user
 
-    private Double rating;
+    private Double rating; // Rating of the rider, can be used to determine the rider's reliability or behavior during rides
 }

@@ -54,7 +54,7 @@
             <artifactId>hibernate-spatial</artifactId>
             <version>6.6.1.Final</version>
         </dependency>
-
+    <!-- we can use this dependency to convert the coordinates to a point -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

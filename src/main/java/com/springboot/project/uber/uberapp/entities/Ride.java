@@ -19,26 +19,26 @@ public class Ride {
     private Point pickUpLocation;
 
     @Column(columnDefinition = "Geometry(Point, 4326)")
-    private Point dropLocation;
+    private Point dropLocation; // Column to store the pickup and drop-off locations as Point geometry types with SRID 4326 (WGS 84)
 
     @CreationTimestamp // it will fill the requestTimme automatically
-    private LocalDateTime createdTime;
+    private LocalDateTime createdTime; // Timestamp when the driver accepted the ride request, automatically filled by Hibernate
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Rider rider;
+    private Rider rider; // Many-to-one relationship with Rider entity, each ride is made by a rider
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Driver driver;
+    private Driver driver; // Many-to-one relationship with Driver entity, each ride is assigned to a driver
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
-    private RideStatus rideStatus;
+    private RideStatus rideStatus; //     CANCELLED, CONFIRMED, ENDED, ONGOING
 
-    private Double fare;
+    private Double fare; // Fare for the ride, can be calculated based on distance, time, and other factors
 
-    private LocalDateTime startedAt;
+    private LocalDateTime startedAt; // Timestamp when the ride started, can be used to calculate the duration of the ride
 
-    private LocalDateTime endedAt;
+    private LocalDateTime endedAt; // Timestamp when the ride ended, can be used to calculate the duration of the ride and fare calculation
 }

@@ -24,7 +24,7 @@ public class User {
 
     private String password;
 
-    @ElementCollection(fetch = FetchType.LAZY)
-    @Enumerated(EnumType.STRING) // Storing enums as strings
+    @ElementCollection(fetch = FetchType.LAZY) // it will create a separate table for roles with name app_User_roles
+    @Enumerated(EnumType.STRING) // Storing enums as strings, basically we are telling JPA to store the enum values as strings in the database otherwise it will store as integers based on the order of declaration in the enum class
     private Set<Role> roles;
 }
