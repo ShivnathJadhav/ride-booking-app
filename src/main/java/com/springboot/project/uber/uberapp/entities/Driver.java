@@ -23,6 +23,5 @@ public class Driver {
 
     @Column(columnDefinition = "Geometry(Point, 4326)") // Storing the current location of the driver as a Point geometry type, using SRID 4326 for geographic coordinates
     // This column will store the driver's current location in a spatial format, allowing for efficient spatial queries
-
     private Point currentLocation; // Current location of the driver, stored as a Point geometry type for spatial queries
 }

@@ -35,4 +35,6 @@ public class RideRequest {
 
     @Enumerated(EnumType.STRING)
     private RideRequestStatus rideRequestStatus; // PENDING, CANCELLED, CONFIRMED
+
+    private  Double fare;
 }

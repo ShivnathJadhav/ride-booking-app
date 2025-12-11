@@ -25,7 +25,7 @@ public class Ride {
     private LocalDateTime createdTime; // Timestamp when the driver accepted the ride request, automatically filled by Hibernate
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Rider rider; // Many-to-one relationship with Rider entity, each ride is made by a rider
+    private Rider rider; // Many-to-one relationship with Rider entity because each ride is requested by a rider
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Driver driver; // Many-to-one relationship with Driver entity, each ride is assigned to a driver

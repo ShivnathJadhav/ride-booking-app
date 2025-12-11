@@ -6,6 +6,7 @@ import com.springboot.project.uber.uberapp.dto.RiderDto;
 
 import java.util.List;
 
+//This is the service interface for driver-related operations in the Uber-like application.
 public interface DriverService {
 
     RiderDto acceptRide(Long rideId);

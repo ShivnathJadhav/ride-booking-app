@@ -6,7 +6,7 @@ import com.springboot.project.uber.uberapp.entities.Ride;
 import com.springboot.project.uber.uberapp.entities.enums.RideStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-
+//This is the RideService interface that defines the contract for ride-related operations in the Uber-like application.
 public interface RideService {
 
     Ride getRideById(Long rideId);
