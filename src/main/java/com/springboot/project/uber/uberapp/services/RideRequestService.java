@@ -1,0 +1,9 @@
+package com.springboot.project.uber.uberapp.services;
+
+import com.springboot.project.uber.uberapp.entities.RideRequest;
+
+public interface RideRequestService {
+    RideRequest findRideRequestById(Long rideRequestId);
+
+    void update(RideRequest rideRequest);
+}

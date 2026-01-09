@@ -1,6 +1,5 @@
 package com.springboot.project.uber.uberapp.dto;
 
-import com.springboot.project.uber.uberapp.entities.Rider;
 import com.springboot.project.uber.uberapp.entities.enums.PaymentMethod;
 import com.springboot.project.uber.uberapp.entities.enums.RideStatus;
 import lombok.AllArgsConstructor;
@@ -15,8 +14,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class RideDto {
     private  Long id;
-    private Point pickUpLocation;
-    private Point dropLocation;
+    private PointDto pickUpLocation;
+    private PointDto dropLocation;
     private LocalDateTime createdTime;
     private RiderDto rider;
     private DriverDto driver;

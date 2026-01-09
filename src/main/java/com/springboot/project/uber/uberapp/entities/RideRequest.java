@@ -24,8 +24,8 @@ public class RideRequest {
     @Column(columnDefinition = "Geometry(Point, 4326)")
     private Point dropLocation; // Column to store the drop-off location as a Point geometry type with SRID 4326 (WGS 84)
 
-    @CreationTimestamp // it will fill the requestTimme automatically
-    private LocalDateTime requestTime;  // Timestamp when the ride request was created, automatically filled by Hibernate
+    @CreationTimestamp // it will fill the requestTime automatically
+    private LocalDateTime requestedTime;  // Timestamp when the ride request was created, automatically filled by Hibernate
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Rider rider; // Many-to-one relationship with Rider entity, each ride request is made by a rider

@@ -1,15 +1,22 @@
 package com.springboot.project.uber.uberapp.entities;
 
 import com.springboot.project.uber.uberapp.entities.enums.PaymentMethod;
-import com.springboot.project.uber.uberapp.entities.enums.RideRequestStatus;
 import com.springboot.project.uber.uberapp.entities.enums.RideStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.locationtech.jts.geom.Point;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Ride {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +42,8 @@ public class Ride {
 
     @Enumerated(EnumType.STRING)
     private RideStatus rideStatus; //     CANCELLED, CONFIRMED, ENDED, ONGOING
+
+    private String otp; // OTP for ride verification, can be used to ensure that the rider and driver are matched correctly
 
     private Double fare; // Fare for the ride, can be calculated based on distance, time, and other factors
 
