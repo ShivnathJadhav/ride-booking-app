@@ -55,6 +55,7 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
         <!-- we can use this dependency to convert the coordinates to a point -->
         <dependency>
             <groupId>org.hibernate</groupId>

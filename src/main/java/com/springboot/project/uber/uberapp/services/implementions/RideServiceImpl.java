@@ -4,6 +4,7 @@ import com.springboot.project.uber.uberapp.dto.RideRequestDto;
 import com.springboot.project.uber.uberapp.entities.Driver;
 import com.springboot.project.uber.uberapp.entities.Ride;
 import com.springboot.project.uber.uberapp.entities.RideRequest;
+import com.springboot.project.uber.uberapp.entities.Rider;
 import com.springboot.project.uber.uberapp.entities.enums.RideRequestStatus;
 import com.springboot.project.uber.uberapp.entities.enums.RideStatus;
 import com.springboot.project.uber.uberapp.repositories.RideRepository;
@@ -34,11 +35,6 @@ public class RideServiceImpl implements RideService {
     }
 
     @Override
-    public void matchWithDriver(RideRequestDto rideRequestDto) {
-
-    }
-
-    @Override
     public Ride createNewRide(RideRequest rideRequest, Driver driver) {
         rideRequest.setRideRequestStatus(RideRequestStatus.CONFIRMED);
         Ride ride = modelMapper.map(rideRequest, Ride.class);
@@ -58,13 +54,13 @@ public class RideServiceImpl implements RideService {
 
 
     @Override
-    public Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest) {
-        return null;
+    public Page<Ride> getAllRidesOfRider(Rider rider, PageRequest pageRequest) {
+        return rideRepository.findByRider(rider,pageRequest);
     }
 
     @Override
-    public Page<Ride> getAllRidesOfDriver(Long driverId, PageRequest pageRequest) {
-        return null;
+    public Page<Ride> getAllRidesOfDriver(Driver driver, PageRequest pageRequest) {
+        return rideRepository.findByDriver(driver,pageRequest);
     }
 
     private String generateRandomOTP () {

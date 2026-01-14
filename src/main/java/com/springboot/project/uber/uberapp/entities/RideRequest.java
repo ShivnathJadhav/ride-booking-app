@@ -3,16 +3,19 @@ package com.springboot.project.uber.uberapp.entities;
 import com.springboot.project.uber.uberapp.entities.enums.PaymentMethod;
 import com.springboot.project.uber.uberapp.entities.enums.RideRequestStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.locationtech.jts.geom.Point;
 
 import java.time.LocalDateTime;
-
-@Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class RideRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

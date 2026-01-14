@@ -3,17 +3,22 @@ package com.springboot.project.uber.uberapp.entities;
 import com.springboot.project.uber.uberapp.entities.enums.TransactionMethod;
 import com.springboot.project.uber.uberapp.entities.enums.TransactionType;
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Builder
 public class WalletTransaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double balance;
+    private Double amount;
 
     private TransactionType transactionType;
 

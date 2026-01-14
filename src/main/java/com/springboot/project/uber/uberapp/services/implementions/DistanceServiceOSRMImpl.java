@@ -21,12 +21,12 @@ public class DistanceServiceOSRMImpl implements DistanceService {
         try {
             String uri = src.getX()+","+src.getY()+";"+dest.getX()+","+dest.getY();
             OSRMResponseDto osrmResponseDto = RestClient.builder()
-                    .baseUrl(OSRM_API_BASE_URL)
-                    .build()
-                    .get()
-                    .uri(uri)
-                    .retrieve()
-                    .body(OSRMResponseDto.class);
+                    .baseUrl(OSRM_API_BASE_URL) // setting up base URL
+                    .build()    // building the client
+                    .get()  // making GET request to the API to fetch distance. it will append the uri to the base URL
+                    .uri(uri)   // setting up the URI with source and destination coordinates
+                    .retrieve() // retrieving the response
+                    .body(OSRMResponseDto.class); // mapping the response to OSRMResponseDto class
 
             if(osrmResponseDto.getRoutes().isEmpty()){
                 logger.error("No routes found between the given points");

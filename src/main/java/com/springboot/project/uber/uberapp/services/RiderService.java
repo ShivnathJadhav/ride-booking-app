@@ -6,6 +6,8 @@ import com.springboot.project.uber.uberapp.dto.RideRequestDto;
 import com.springboot.project.uber.uberapp.dto.RiderDto;
 import com.springboot.project.uber.uberapp.entities.Rider;
 import com.springboot.project.uber.uberapp.entities.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 // This is the service interface for rider-related operations in the Uber-like application.
@@ -18,7 +20,7 @@ public interface RiderService {
 
     RiderDto getMyProfile();
 
-    List<RideDto> getAllMyRides();
+    Page<RideDto> getAllMyRides(PageRequest pageRequest);
 
     Rider createNewRiderProfile(User user);
 

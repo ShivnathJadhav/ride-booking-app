@@ -2,15 +2,17 @@ package com.springboot.project.uber.uberapp.entities;
 
 import com.springboot.project.uber.uberapp.entities.enums.Role;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
-
-@Entity
 @Getter
 @Setter
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 @Table(name = "app_User")
 public class User {
     @Id
